@@ -30,7 +30,7 @@ public class ManageOperations {
 
     public Operation findOperation(String findByName) throws ExceptionClass{
         for(Operation op:operations){
-            if(op.getName().equals("findByName"))
+            if(op.getName().equals(findByName))
                 return op;
         }
         throw new ExceptionClass("Unknown operation");

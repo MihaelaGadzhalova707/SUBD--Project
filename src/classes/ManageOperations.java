@@ -10,8 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ManageOperations {
-    private List<Operation> operations = new ArrayList<>();
+    private List<Operation> operations;
 
+    public ManageOperations(){
+        operations = new ArrayList<>();
+    }
 
     public void setOperations(ResultSet set){
         operations.add(new AddStudent(set));

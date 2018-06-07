@@ -1,10 +1,10 @@
 package classes;
 
-public class Cursor {
 
+public class Cursor{
     private ManageOperations operations;
 
-    public void printCursor(boolean enter,boolean cursorOn,Operation operation) {
+    public void printCursor(boolean enter, boolean cursorOn,Operation operation) {
 
         Operation foundOperation;
 
@@ -12,7 +12,7 @@ public class Cursor {
             System.out.println(operation.getName());
         }
         else {
-            System.out.println(" ->" + operation.getName());
+            System.out.println("->" + operation.getName());
 
             if(enter == true) {
                 try {
@@ -26,4 +26,5 @@ public class Cursor {
             }
         }
     }
+
 }

@@ -3,7 +3,7 @@ package com.subd.project.Entities;
 import javax.persistence.Entity;
 
 @Entity
-public class StudentEntity {
+public class Student {
 
     private int id;
     private String name;

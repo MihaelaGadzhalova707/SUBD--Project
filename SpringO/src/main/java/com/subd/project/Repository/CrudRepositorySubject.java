@@ -26,6 +26,16 @@ public class CrudRepositorySubject {
                 SQL, new SubjectMapper());
         return subjects;
     }
+
+    public int insert(Subject subject) {
+        return jdbcTemplate.update("insert into Subjects (id, name) " + "values(?, ?)",
+                new Object[] { subject.getId(), subject.getName()});
+    }
+
+    public int update(Subject subject) {
+        return jdbcTemplate.update("update Subjects " + " set name = ?" + " where id = ?",
+                new Object[] { subject.getId(),subject.getName()});
+    }
         private static final class SubjectMapper implements RowMapper<Subject> {
 
         public Subject mapRow(ResultSet rs, int rowNum) throws SQLException {

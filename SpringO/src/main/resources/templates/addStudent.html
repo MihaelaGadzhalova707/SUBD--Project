@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:thymeleaf.org">
+<head>
+    <title>Add Student</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">WebSiteName</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="#">Home</a></li>
+            <li class="active"><a href="addStudent.html">Add student</a></li>
+            <li><a href="#">Page 2</a></li>
+            <li><a href="#">Page 3</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <form method="post" th:object="${student}">
+        <div class="form-group row">
+            <label for="student_name" class="col-2 col-form-label">Name</label>
+            <div class="col-10">
+                <input class="form-control" type="text" placeholder="Enter Name" id="student_name" th:field="*{name}">
+            </div>
+            <label for="class_letter" class="col-2 col-form-label">Class Letter</label>
+            <div class="col-10">
+                <input class="form-control" type="text" placeholder="Enter Class Letter" id="class_letter"  th:field="*{class_letter}">
+            </div>
+            <label for="class_num" class="col-2 col-form-label">Number In Class</label>
+            <div class="col-10">
+                <input class="form-control" type="text" placeholder="Enter Class Number" id="class_num"  th:field="*{class_num}">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</body>
+</html>

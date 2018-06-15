@@ -1,22 +1,40 @@
 package com.subd.project.Config;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
-import javax.sql.DataSource;
-
-@Configuration
 public class SpringJdbcConfig {
-    @Bean
-    public DataSource mysqlDataSource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/springjdbc");
-        dataSource.setUsername("root");
-        dataSource.setPassword("1234");
 
-        return dataSource;
+    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+    static final String DB_URL = "jdbc:mysql://localhost/";
+
+    static final String USER = "root";
+    static final String PASS = "1234";
+
+    public Connection connection(){
+        Connection conn = null;
+
+        try {
+
+            Class.forName("com.mysql.jdbc.Driver");
+            System.out.println("Connecting to database...");
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+        } catch (SQLException se) {
+            se.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+        }
+
+        return conn;
     }
+
 }

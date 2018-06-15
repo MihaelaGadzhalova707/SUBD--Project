@@ -1,14 +1,16 @@
 package com.subd.project.Entities;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Student {
 
+    @Id
     private int id;
     private String name;
     private int class_num;
-    private char class_letter;
+    private String class_letter;
     private int  student_num;
     private double grade;
 
@@ -36,11 +38,11 @@ public class Student {
         this.class_num = class_num;
     }
 
-    public char getClass_letter() {
+    public String getClass_letter() {
         return class_letter;
     }
 
-    public void setClass_letter(char class_letter) {
+    public void setClass_letter(String class_letter) {
         this.class_letter = class_letter;
     }
 

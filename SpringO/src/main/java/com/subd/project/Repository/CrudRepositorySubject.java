@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 @Repository
 public class CrudRepositorySubject {
@@ -20,6 +21,17 @@ public class CrudRepositorySubject {
     Subject findById(long id) {
         return jdbcTemplate.queryForObject("select * from Subjects where id=?", new Object[]{id},
                 new SubjectMapper());
+    }
+
+    List<Subject> findAll() {
+        String SQL = "select * from Subjects";
+        List<Subject> subjects = jdbcTemplate.query(
+                SQL, new SubjectMapper());
+        return subjects;
+    }
+
+    public int deleteById(long id) {
+        return jdbcTemplate.update("delete from Subjects where id=?", new Object[] { id });
     }
 
     private static final class SubjectMapper implements RowMapper<Subject> {

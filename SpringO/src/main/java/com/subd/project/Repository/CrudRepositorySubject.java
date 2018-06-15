@@ -1,3 +1,6 @@
+package com.subd.project.Repository;
+
+
 import com.subd.project.Entities.Student;
 import com.subd.project.Entities.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,14 +29,18 @@ public class CrudRepositorySubject {
                 SQL, new SubjectMapper());
         return subjects;
     }
-        private static final class SubjectMapper implements RowMapper<Subject> {
+
+    public int deleteById(long id) {
+        return jdbcTemplate.update("delete from Subjects where id=?", new Object[] { id });
+    }
+
+    private static final class SubjectMapper implements RowMapper<Subject> {
 
         public Subject mapRow(ResultSet rs, int rowNum) throws SQLException {
             Subject subject = new Subject();
             subject.setName(rs.getString("name"));
             return subject;
         }
-
     }
 
 }

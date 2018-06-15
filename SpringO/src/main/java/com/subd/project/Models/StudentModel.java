@@ -1,6 +1,8 @@
-package com.subd.project.Model;
+package com.subd.project.Models;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
+
 
 public class StudentModel {
 

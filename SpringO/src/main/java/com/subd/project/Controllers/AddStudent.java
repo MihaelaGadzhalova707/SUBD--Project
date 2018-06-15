@@ -16,8 +16,9 @@ public class AddStudent {
         return "addStudent";
     }
 
-//    @PostMapping("/addStudent")
-//    public String postAddStudent(@ModelAttribute Student studentData){
-//        return "studentsTable";
-//    }
+    @PostMapping("/addStudent")
+    public String postAddStudent(@ModelAttribute Student studentData){
+        return "studentsTable";
+    }
 }
+

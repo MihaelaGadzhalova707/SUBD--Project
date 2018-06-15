@@ -25,6 +25,7 @@
 </nav>
 
 <div class="container">
+
     <form method="post" th:object="${student}">
         <div class="form-group row">
             <label for="student_name" class="col-2 col-form-label">Name</label>
@@ -38,10 +39,12 @@
             <label for="class_num" class="col-2 col-form-label">Number In Class</label>
             <div class="col-10">
                 <input class="form-control" type="text" placeholder="Enter Class Number" id="class_num"  th:field="*{class_num}">
-            </div>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
     </form>
 </div>
 </body>
+
 </html>
+

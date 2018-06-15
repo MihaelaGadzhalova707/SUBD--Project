@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class Home {
     @GetMapping("/")
     public String getHomePage(){
-        SpringJdbcConfig jdbcConfig = new SpringJdbcConfig();
-        JDBCSetup jdbc = new JDBCSetup();
-        jdbc.init(jdbcConfig.connection());
+//        SpringJdbcConfig jdbcConfig = new SpringJdbcConfig();
+//        JDBCSetup jdbc = new JDBCSetup();
+//        jdbc.init(jdbcConfig.connection());
         return "index";
     }
 }

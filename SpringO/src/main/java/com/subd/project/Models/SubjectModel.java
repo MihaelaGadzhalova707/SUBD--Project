@@ -1,14 +1,13 @@
-package com.subd.project.Entities;
+package com.subd.project.Models;
 
-import javax.persistence.Entity;
-
+import javax.persistence.Id;
 
 /**
  * Created by Misheto on 15.6.2018 г..
  */
-@Entity
-public class SubjectEntity {
+public class SubjectModel {
 
+    @Id
     private int id;
     private String name;
 
@@ -27,6 +26,4 @@ public class SubjectEntity {
     public void setName(String name) {
         this.name = name;
     }
-
-
 }

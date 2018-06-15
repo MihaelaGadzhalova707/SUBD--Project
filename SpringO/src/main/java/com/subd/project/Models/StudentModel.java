@@ -1,10 +1,11 @@
-package com.subd.project.Model;
+package com.subd.project.Models;
 
-/**
- * Created by Misheto on 15.6.2018 г..
- */
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 public class StudentModel {
 
+    @Id
     private int id;
     private String name;
     private int class_num;

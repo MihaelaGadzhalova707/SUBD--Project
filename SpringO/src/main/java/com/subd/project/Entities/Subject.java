@@ -1,10 +1,12 @@
-package com.subd.project.Model;
+package com.subd.project.Entities;
 
-/**
- * Created by Misheto on 15.6.2018 г..
- */
-public class SubjectModel {
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
+public class Subject {
+
+    @Id
     private int id;
     private String name;
 

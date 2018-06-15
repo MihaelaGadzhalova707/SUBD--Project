@@ -18,7 +18,7 @@ public class CrudRepositorySubject {
     JdbcTemplate jdbcTemplate;
 
     Subject findById(long id) {
-        return jdbcTemplate.queryForObject("select * from subject where id=?", new Object[]{id},
+        return jdbcTemplate.queryForObject("select * from Subjects where id=?", new Object[]{id},
                 new SubjectMapper());
     }
 

@@ -50,6 +50,7 @@ public class JDBCSetup {
                 "\tFOREIGN KEY (SubjectId) REFERENCES Subjects(Id)\n" +
                 ");\n";
 
+
         jdbcTemplate.execute(db);
     }
 
